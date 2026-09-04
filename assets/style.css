@@ -147,6 +147,21 @@ footer {
   color: var(--muted);
   font-size: 0.85rem;
 }
+.store-badges .web-app-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  height: 54px;
+  padding: 0 1.25rem;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--card-bg);
+  color: var(--fg);
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-decoration: none;
+}
+.store-badges .web-app-btn:hover { border-color: var(--accent); }
 
 /* Privacy policy pages */
 .summary {
