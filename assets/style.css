@@ -47,6 +47,36 @@ header p.tagline {
   margin: 0;
 }
 
+/* Marketing hero */
+.hero {
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 4.5rem 1.5rem 2.5rem;
+  text-align: center;
+  border-bottom: none;
+}
+.hero .app-icon {
+  width: 112px;
+  height: 112px;
+  border-radius: 25%;
+  display: block;
+  margin: 0 auto 1.5rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.18);
+}
+.hero h1 {
+  font-size: clamp(2.1rem, 6vw, 3rem);
+  margin: 0 0 0.75rem;
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+}
+.hero .tagline {
+  color: var(--muted);
+  font-size: clamp(1.05rem, 2.6vw, 1.3rem);
+  margin: 0 auto;
+  max-width: 34rem;
+}
+.hero .store-badges { justify-content: center; margin-top: 2rem; }
+
 main {
   max-width: 820px;
   margin: 0 auto;
@@ -83,6 +113,8 @@ footer {
   padding: 1rem 1.1rem;
 }
 .features strong { display: block; margin-bottom: 0.25rem; }
+/* Wider cards so an even number of features pairs up instead of orphaning one */
+.features.duo { grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); }
 
 /* App portfolio grid (overview page) */
 .app-grid {
@@ -117,12 +149,6 @@ footer {
   background: var(--badge-bg);
   color: var(--accent);
 }
-.app-card .card-links a {
-  font-weight: 600;
-  text-decoration: none;
-}
-.app-card .card-links a:hover { text-decoration: underline; }
-
 /* Store badges (product pages) */
 .store-badges {
   display: flex;
@@ -137,16 +163,26 @@ footer {
   width: auto;
   display: block;
 }
-.store-badges .pending {
-  display: inline-flex;
-  align-items: center;
-  height: 54px;
-  padding: 0 1rem;
-  border: 1px dashed var(--border);
-  border-radius: 10px;
-  color: var(--muted);
-  font-size: 0.85rem;
+/* Put the visitor's own platform first; falls back to source order without JS */
+.platform-ios .store-badges .badge-ios,
+.platform-android .store-badges .badge-android { order: -1; }
+
+/* Closing call to action */
+.cta {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 2.25rem 1.5rem;
+  text-align: center;
 }
+.cta h2 {
+  border-bottom: none;
+  padding-bottom: 0;
+  margin-top: 0;
+  font-size: 1.5rem;
+}
+.cta p { color: var(--muted); margin: 0 auto; max-width: 30rem; }
+.cta .store-badges { justify-content: center; }
 .store-badges .web-app-btn {
   display: inline-flex;
   align-items: center;
