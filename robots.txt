@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://strikersree.github.io/apps.srinivaskannan/sitemap.xml
